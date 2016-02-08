@@ -1,5 +1,3 @@
-import Piece from "Piece"
-
 class Pawn extends Piece {
 
   constructor(x,y,color){
@@ -56,6 +54,7 @@ class WhitePawn extends Pawn {
 
   constructor(x,y,color) {
     super(x,y,color);
+    this.color = 'white';
   }
 
   checkMoveBounds() {
@@ -79,6 +78,7 @@ class BlackPawn extends Pawn {
 
   constructor(x,y,color) {
     super(x,y,color);
+    this.color = 'black';
   }
 
   checkMoveBounds() {
