@@ -5,16 +5,15 @@ class Game {
     this.turn = 0;
 
     //set taken pieces
-    this.takenPieces[32] = [];
-    this.numTakenPieces = 0;
+    this.takenPieces = [];
 
-    //create array of pieces
-    this.board[8][8] = [];
+    //create empty array of pieces
+    this.board = [[],[],[],[],[],[],[],[]];
 
     //make pawns
-    for (i=0;i<8;i++){
-      this.board[i][1] = new Pawn(i,1,'white');
-      this.board[i][6] = new Pawn(i,6,'black');
+    for (var i=0;i<8;i++){
+      this.board[i][1] = new WhitePawn(i,1,'white');
+      this.board[i][6] = new BlackPawn(i,6,'black');
     }
 
     //make castles
@@ -44,3 +43,7 @@ class Game {
 
   }
 }
+
+game = new Game();
+
+console.log('Board loaded');

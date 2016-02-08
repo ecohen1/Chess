@@ -7,9 +7,9 @@ var GamePieces = ReactDOM.createClass({
           {
             col.each(function(piece){
               if (piece) {
-                return <img src="" class="piece" style="display: inline-block">
+                return <img src="./piece.jpg" class="piece" style="display: inline-block">
               } else {
-                return <img src="" class="no-piece" style="display: inline-block">
+                return <img src="./piece.jpg" class="no-piece" style="display: inline-block">
               }
             });
           }

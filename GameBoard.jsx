@@ -1,4 +1,9 @@
 var GameBoard = ReactDOM.createClass({
+
+  getInitialState: function(){
+    return {board: game.board}
+  }
+
   actionHandler: function(){
     var X = $("#pieceX").val();
     var Y = $("#pieceY").val();
@@ -16,19 +21,20 @@ var GameBoard = ReactDOM.createClass({
       alert("invalid action type");
     }
 
-
+    this.setState(game.board)
   },
 
   render: function(){
     return
       <div>
-        <GamePieces board={game.board}/>
+        <GamePieces board={this.state.board}/>
         <form onSubmit="actionHandler">
           <input type="text" id="pieceX">
           <input type="text" id="pieceY">
           <input type="text" id="pieceNewY">
           <input type="text" id="pieceNewY">
           <input type="text" id="actionType">
+          <button type="submit">Go!</button>
         </form>
       </div>
   }
