@@ -1,10 +1,12 @@
-var GameBoard = ReactDOM.createClass({
-
-  getInitialState: function(){
-    return {board: game.board}
+class GameBoard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      board: game.board
+    }
   }
 
-  actionHandler: function(){
+  actionHandler(){
     var X = $("#pieceX").val();
     var Y = $("#pieceY").val();
     var selectedPiece = game.board[X][Y];
@@ -22,20 +24,19 @@ var GameBoard = ReactDOM.createClass({
     }
 
     this.setState(game.board)
-  },
+  }
 
-  render: function(){
+  render(){
     return
       <div>
-        <GamePieces board={this.state.board}/>
         <form onSubmit="actionHandler">
-          <input type="text" id="pieceX">
-          <input type="text" id="pieceY">
-          <input type="text" id="pieceNewY">
-          <input type="text" id="pieceNewY">
-          <input type="text" id="actionType">
+          <input type="text" id="pieceX"/>
+          <input type="text" id="pieceY"/>
+          <input type="text" id="pieceNewY"/>
+          <input type="text" id="pieceNewY"/>
+          <input type="text" id="actionType"/>
           <button type="submit">Go!</button>
         </form>
       </div>
   }
-});
+}

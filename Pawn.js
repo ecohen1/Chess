@@ -97,5 +97,3 @@ class BlackPawn extends Pawn {
     }
   }
 }
-
-console.log('Pawn loaded');

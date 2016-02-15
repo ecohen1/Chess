@@ -5,5 +5,3 @@ class Piece {
     this.color = color;
   }
 }
-
-console.log('Piece loaded');
