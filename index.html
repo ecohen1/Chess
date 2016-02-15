@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-  
+
   <head>
     <meta charset="utf-8">
     <title>ChessJS</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script type="text/babel" src="./concat/bundle.jsx"></script>
+    
+    <style>
+    .piece, .no-piece {
+      display: inline-block;
+    }
+    </style>
   </head>
 
   <body>
     <div id="container"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-    <script type="text/babel" src="./Piece.js"></script>
-    <script type="text/babel" src="./Pawn.js"></script>
-    <script type="text/babel" src="./Board.js"></script>
-    <script type="text/babel" src="./GamePieces.jsx"></script>
-    <script type="text/babel" src="./GameBoard.jsx"></script>
-    <script type="text/babel">
-      ReactDOM.render(<GameBoard />, document.getElementById("container"));
-    </script>
   </body>
 </html>
