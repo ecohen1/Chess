@@ -219,4 +219,4 @@ class GamePieces extends React.Component {
   }
 }
 
-ReactDOM.render(<GameBoard />, document.getElementById("container"));
+ReactDOM.render(<GameBoard game={game}/>, document.getElementById("container"));
