@@ -2,7 +2,7 @@ class GameBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      board: game.board
+      board: this.props.game.board
     }
   }
 
@@ -23,13 +23,14 @@ class GameBoard extends React.Component {
       alert("invalid action type");
     }
 
-    this.setState(game.board)
+    this.setState(this.props.board);
   }
 
   render(){
-    return
+    return (
       <div>
-        <form onSubmit="actionHandler">
+        <GamePieces board={this.state.board} />
+        <form onSubmit={this.actionHandler}>
           <input type="text" id="pieceX"/>
           <input type="text" id="pieceY"/>
           <input type="text" id="pieceNewY"/>
@@ -38,21 +39,26 @@ class GameBoard extends React.Component {
           <button type="submit">Go!</button>
         </form>
       </div>
+    )
   }
 }
 
 class GamePieces extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      this.props.board.each(function(col){
+      this.props.board.forEach(function(col){
         return (
           <div>
           {
-            col.each(function(piece){
+            col.forEach(function(piece){
               if (piece) {
-                return <img src="./piece.jpg" class="piece"/>
+                return <img src="./img/piece.jpg" class="piece"/>
               } else {
-                return <img src="./piece.jpg" class="no-piece"/>
+                return <img src="./img/piece.jpg" class="no-piece"/>
               }
             })
           }

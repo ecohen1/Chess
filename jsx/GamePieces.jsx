@@ -1,15 +1,19 @@
 class GamePieces extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      this.props.board.each(function(col){
+      this.props.board.forEach(function(col){
         return (
           <div>
           {
-            col.each(function(piece){
+            col.forEach(function(piece){
               if (piece) {
-                return <img src="./piece.jpg" class="piece"/>
+                return <img src="./img/piece.jpg" class="piece"/>
               } else {
-                return <img src="./piece.jpg" class="no-piece"/>
+                return <img src="./img/piece.jpg" class="no-piece"/>
               }
             })
           }

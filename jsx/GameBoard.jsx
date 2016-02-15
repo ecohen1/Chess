@@ -2,7 +2,7 @@ class GameBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      board: game.board
+      board: this.props.game.board
     }
   }
 
@@ -23,13 +23,14 @@ class GameBoard extends React.Component {
       alert("invalid action type");
     }
 
-    this.setState(game.board)
+    this.setState(this.props.board);
   }
 
   render(){
-    return
+    return (
       <div>
-        <form onSubmit="actionHandler">
+        <GamePieces board={this.state.board} />
+        <form onSubmit={this.actionHandler}>
           <input type="text" id="pieceX"/>
           <input type="text" id="pieceY"/>
           <input type="text" id="pieceNewY"/>
@@ -38,5 +39,6 @@ class GameBoard extends React.Component {
           <button type="submit">Go!</button>
         </form>
       </div>
+    )
   }
 }
